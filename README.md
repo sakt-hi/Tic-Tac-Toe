@@ -25,6 +25,9 @@ Check out the live preview of the game: [Tic-Tac-Toe Live Preview](https://tic-t
 
 ## Screenshots
 ![screencapture-localhost-5173-2024-03-23-15_44_14](https://github.com/sakt-hi/Tic-Tac-Toe/assets/140589601/71d2d683-54e8-4904-8358-dc108670f469)
+![screencapture-tic-tac-toe-sakthi-netlify-app-2024-03-23-21_21_46](https://github.com/sakt-hi/Tic-Tac-Toe/assets/140589601/c25a2f19-7fbe-49de-a0b0-f4cfb5c7de95)
+![screencapture-tic-tac-toe-sakthi-netlify-app-2024-03-23-21_20_52](https://github.com/sakt-hi/Tic-Tac-Toe/assets/140589601/ba7f6331-b629-4041-a37a-dda91da92555)
+
 
 
 ## Contributing
