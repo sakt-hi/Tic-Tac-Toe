@@ -1,0 +1,305 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  gap: 2rem;
+}
+
+@keyframes blink {
+  0% { border-color: transparent; }
+  50% { border-color: #999; }
+  100% { border-color: transparent; }
+}
+
+.player-input{
+  padding: 0.75rem 0.5rem;
+  max-width: 100px;
+  border: 2px solid transparent; /* Start with transparent border */
+  animation: blink 1.5s linear infinite;
+  border-radius: 6px;
+}
+
+.game-container{
+  background-color: #393E46;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  #players{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    .vr{
+      width: 2px;
+      background-color: #666;
+      margin: 0 2rem;
+    }
+  }
+}
+
+.player-list{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  .player{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    .player-name{
+      white-space: nowrap;
+    }
+    .player-symbol{
+      background-color: rgba(0,0,0,0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .player-name{
+      font-size: 18px;
+    }
+  }
+  
+}
+
+@keyframes subtleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.player-active{
+  border: 2px solid #646cff;
+  border-color: #646cff;
+  transition: border-color 0.3s ease;
+  animation: subtleAnimation 0.5s ease;
+}
+
+.player-name-active{
+  font-weight: bold;
+}
+
+.board-log-wrap{
+  display: flex;
+  gap: 1rem;
+  width: auto;
+  .log-container{
+    background-color: #393E46;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    max-width: 17rem;
+    text-align: left;
+    .instructions{
+      ul{
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .ins-list{
+          text-align: left;
+          /* max-width: 12rem; */
+        }
+      }
+      h4{
+        max-width: 20rem;
+      }
+    }
+    .log-moves{
+      #logs{
+        list-style: disc;
+        list-style-position: inside;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  }
+  .board-container{
+    background-color: #393E46;
+    padding: 0.5rem 2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    ol{
+      list-style: none;
+      padding: 0;
+    }
+    #game-board{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      .symbol-button-col{
+        width: 100px;
+        height: 100px;
+        button{
+          width: 100%;
+          height: 100%;
+          font-size: 48px;
+          font-weight: bold;
+        }
+      }
+      .symbol-button-col:not(:last-child){
+        margin-bottom: 12px;
+      }
+      .symbol-button:disabled{
+        background-color: rgba(0,0,0,0.3);
+        color: #fff;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        cursor:not-allowed
+      }
+    }
+  }
+}
+
+.game-over{
+  min-width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #646cff;
+  padding: 2rem;
+  border-radius: 1rem;
+  .winning-image{
+    width: 5rem;
+    .emoji{
+      font-size: 40px
+    }
+  }
+  h3{
+    line-height: 0;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  p{
+    line-height: 0;
+    font-weight: bold;
+    font-size: 32px;
+    padding-bottom: 1rem;
+  }
+  .play-again{
+    display: flex;
+    font-size: 16px;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    border: none;
+    svg{
+      height: 1rem;
+    }
+    &:hover{
+      background-color: rgba(0,0,0,0.2);
+    }
+  }
+}
+
+.winner-info{
+  position: absolute;
+  background-color: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  top:0rem;
+  left: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credits{
+  position: absolute;
+  bottom:2rem;
+  left: 4rem;
+  width: auto;
+  opacity: 0.5;
+  p,h3{
+    line-height: 0;
+  }
+  .dev{
+    display: flex;
+    gap: 8px;
+    color: #fff;
+    .github-icon{
+      width: 20px;
+    }
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &:hover{
+    opacity: 1;
+  }
+  
+}
+
+@media only screen and (max-width: 480px) {
+  main{
+    h1{
+      font-size: 32px;
+    }
+  }
+  .board-log-wrap::after{
+    content: 'Swipe down to read instructions';
+  }
+  .game-container{
+    width: auto;
+    #players{
+      flex-direction: column !important;
+      gap: 0.5rem;
+    }
+  }
+  .board-log-wrap{
+    flex-direction: column-reverse;
+    align-items: center;
+    .log-container{
+      
+    }
+    
+    .board-container{
+      scale: 0.9;
+    }
+  }
+  .credits{
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .credits{
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+}
