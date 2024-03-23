@@ -2,6 +2,9 @@
 
 This is a simple implementation of the classic game Tic-Tac-Toe using React. It allows two players to take turns marking spaces on a 3x3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.
 
+## Live Preview
+Check out the live preview of the game: [Tic-Tac-Toe Live Preview](https://tic-tac-toe-sakthi.netlify.app/)
+
 ## Features
 - **Responsive Design:** The game is designed to be responsive and playable on both desktop and mobile devices.
 - **Gameplay:** Players can take turns marking spaces by clicking on the grid. The game indicates whose turn it is and displays a message when someone wins or the game ends in a draw.
